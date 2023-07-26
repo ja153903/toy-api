@@ -1,0 +1,21 @@
+{
+  "name": "toy-api",
+  "version": "1.0.0",
+  "description": "Toy Express API with Drizzle ORM and Better SQLite3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "start:dev": "nodemon src/index.mjs"
+  },
+  "author": "Jaime Abbariao",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^8.5.0",
+    "drizzle-orm": "^0.27.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.19.11",
+    "nodemon": "^3.0.1"
+  }
+}
