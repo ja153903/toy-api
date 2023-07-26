@@ -4,6 +4,8 @@ import db from "../lib/db.mjs";
 import { accounts } from "./models.mjs";
 
 /**
+ * Fetch an account from the `accounts` table by `id`
+ *
  * @param {number} id
  * @returns {Promise<unknown | null>}
  */
