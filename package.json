@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.mjs",
     "start:dev": "nodemon src/index.mjs",
-    "migrate": "drizzle-kit generate:sqlite"
+    "migrate": "drizzle-kit generate:sqlite",
+    "prepare": "husky install"
   },
   "author": "Jaime Abbariao",
   "license": "ISC",
@@ -17,6 +18,17 @@
   },
   "devDependencies": {
     "drizzle-kit": "^0.19.11",
-    "nodemon": "^3.0.1"
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.9.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "npx eslint --fix",
+      "npx prettier --write"
+    ]
   }
 }
