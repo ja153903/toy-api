@@ -22,4 +22,32 @@ async function getAccountById(id) {
   return queryResult?.[0] ?? null;
 }
 
-export { getAccountById };
+/** @typedef {{ email: string, password: string, firstName: string, lastName: string }} AccountPayload */
+/**
+ * `createAccount` naively creates an account for this toy API
+ *
+ * TODO: We'll add mechanisms to salt and hash the passwords later.
+ *
+ * @param {AccountPayload} accountPayload
+ * @returns {Promise<accounts | null>}
+ */
+async function createAccount(accountPayload) {
+  try {
+    const queryResult = await db
+      .insert(accounts)
+      .values(accountPayload)
+      .returning({
+        id: accounts.id,
+        email: accounts.email,
+        firstName: accounts.firstName,
+        lastName: accounts.lastName,
+      });
+
+    return queryResult;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
+
+export { getAccountById, createAccount };
