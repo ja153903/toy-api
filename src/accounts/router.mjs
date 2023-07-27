@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import { BY_ID, CREATE } from "../constants/routes.mjs";
-import { getAccountById } from "./services.mjs";
+import { getAccountById, createAccount } from "./services.mjs";
 
 const router = Router();
 
